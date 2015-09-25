@@ -177,7 +177,9 @@ ARCHIVE is the string name of the package archive.")
     hc-zenburn-theme
     helm-themes
     hemisu-theme
-    heroku-theme)
+    heroku-theme
+    color-theme-sanityinc-solarized
+    )
   "Don't install any Melpa packages except these packages")
 
 ;; Don't take Melpa versions of certain packages
@@ -301,7 +303,7 @@ ARCHIVE is the string name of the package archive.")
 (require-package 'quack) ;; for scheme
 (require-package 'anaconda-mode)
 (require-package 'company-anaconda)
-
+(require-package 'color-theme-sanityinc-solarized)
 
 ;; (require-package 'command-frequency)
 

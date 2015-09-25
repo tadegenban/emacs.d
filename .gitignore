@@ -6,7 +6,6 @@ anaconda-mode/
 /.emacs.desktop
 /auto-save-list
 /.session
-/custom.el
 *.elc
 company-statistics-cache.el
 CVS

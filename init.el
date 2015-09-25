@@ -81,6 +81,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-org-mime)
 (require 'init-css)
 (require 'init-python-mode)
+(require 'init-cperl-mode)
 (require 'init-haskell)
 (require 'init-ruby-mode)
 (require 'init-lisp)
@@ -94,8 +95,8 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 ;; (require 'init-gist)
 (require 'init-moz)
 (require 'init-gtags)
-;; use evil mode (vi key binding)
-(require 'init-evil)
+;; do not evil mode (vi key binding)
+;;(require 'init-evil)
 (require 'init-sh)
 (require 'init-ctags)
 (require 'init-bbdb)
@@ -148,13 +149,19 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 
 ;; my personal setup, other major-mode specific setup need it.
 ;; It's dependent on init-site-lisp.el
-(if (file-exists-p "~/.custom.el") (load-file "~/.custom.el"))
+(if (file-exists-p "~/.emacs.d/custom.el") (load-file "~/.emacs.d/custom.el"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
+ '(custom-safe-themes
+   (quote
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
+ '(git-gutter:handled-backends (quote (svn hg git)))
+ '(regex-tool-backend (quote perl))
  '(safe-local-variable-values (quote ((lentic-init . lentic-orgel-org-init))))
  '(session-use-package t nil (session)))
 (custom-set-faces
@@ -166,4 +173,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 ;;; Local Variables:
 ;;; no-byte-compile: t
 ;;; End:
+
+
+
 (put 'erase-buffer 'disabled nil)

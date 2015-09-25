@@ -1,0 +1,4 @@
+* how to install font for *uix system
+https://github.com/adobe-fonts/source-code-pro/issues/17#issuecomment-8967116
+
+

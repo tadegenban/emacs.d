@@ -69,6 +69,7 @@
 
 (setq multi-term-program "/bin/bash")
 (setq term-unbind-key-list '("C-x" "<ESC>"))
+
 (setq term-bind-key-alist
       '(("C-c" . term-interrupt-subjob)
         ("C-p" . term-send-up)

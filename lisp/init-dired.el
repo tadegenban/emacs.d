@@ -1,5 +1,6 @@
-(require 'dired-details)
-(dired-details-install)
+;; not need dired-details because dired+ has the feature in emacs24.4 or later
+;;(require 'dired-details)
+;;(dired-details-install)
 
 ;; search file name only when focus is over file
 (setq dired-isearch-filenames 'dwim)
@@ -28,9 +29,9 @@ if no files marked, always operate on current line in dired-mode
 
 (eval-after-load 'dired
   '(progn
-     (setq-default dired-details-hidden-string "")
-     (define-key dired-mode-map "(" 'dired-details-toggle)
-     (define-key dired-mode-map ")" 'dired-details-toggle)
+     ;;(setq-default dired-details-hidden-string "")
+     ;;(define-key dired-mode-map "(" 'dired-details-toggle)
+     ;;(define-key dired-mode-map ")" 'dired-details-toggle)
 
      (define-key dired-mode-map "/" 'dired-isearch-filenames)
      (define-key dired-mode-map "\\" 'diredext-exec-git-command-in-shell)

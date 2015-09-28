@@ -18,7 +18,7 @@
  ))
 
 ;; Setting English Font
-(set-face-attribute 'default nil :font "-adobe-Source Code Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+(set-face-attribute 'default nil :font "-adobe-Source Code Pro-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 ;; Chinese Font
 ;;(set-default-font "Monaco-10")
 ;; (dolist (charset '(kana han symbol cjk-misc bopomofo))

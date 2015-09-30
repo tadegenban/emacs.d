@@ -72,6 +72,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-hippie-expand)
 (require 'init-windows)
 (require 'init-sessions)
+(require 'init-editing-utils)
 (require 'init-git)
 (require 'init-crontab)
 (require 'init-markdown)

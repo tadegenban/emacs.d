@@ -68,7 +68,7 @@
   (term-send-raw-string "\C-k"))
 
 (setq multi-term-program "/bin/bash")
-(setq term-unbind-key-list '("C-x" "<ESC>"))
+(setq term-unbind-key-list '("C-x"))
 
 (setq term-bind-key-alist
       '(("C-c" . term-interrupt-subjob)

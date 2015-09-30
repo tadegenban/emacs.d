@@ -50,6 +50,18 @@ ARCHIVE is the string name of the package archive.")
         (require-package package min-version t)))))
 
 
+(defun maybe-require-package (package &optional min-version no-refresh)
+  "Try to install PACKAGE, and return non-nil if successful.
+In the event of failure, return nil and print a warning message.
+Optionally require MIN-VERSION.  If NO-REFRESH is non-nil, the
+available package lists will not be re-downloaded in order to
+locate PACKAGE."
+  (condition-case err
+      (require-package package min-version no-refresh)
+    (error
+     (message "Couldn't install package `%s': %S" package err)
+     nil)))
+
 ;;------------------------------------------------------------------------------
 ;; Standard package repositories
 ;;------------------------------------------------------------------------------
@@ -126,6 +138,8 @@ ARCHIVE is the string name of the package archive.")
     company-c-headers
     company-anaconda
     anaconda-mode
+    undo-tree
+    highlight-escape-sequences
     ;; make all the color theme packages available
     afternoon-theme
     define-word
@@ -192,7 +206,7 @@ ARCHIVE is the string name of the package archive.")
          )))
 
 ;; un-comment below code if you prefer use all the package on melpa (unstable) without limitation
-;; (setq package-filter-function nil)
+;;(setq package-filter-function nil)
 
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.

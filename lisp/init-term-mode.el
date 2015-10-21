@@ -25,8 +25,8 @@
     ad-do-it))
 (ad-activate 'term-sentinel)
 
-;; always use bash
-(defvar my-term-shell "/bin/bash")
+;; I use tcsh
+(defvar my-term-shell "/bin/tcsh")
 (defadvice ansi-term (before force-bash)
   (interactive (list my-term-shell)))
 (ad-activate 'ansi-term)
@@ -67,11 +67,12 @@
   (interactive)
   (term-send-raw-string "\C-k"))
 
-(setq multi-term-program "/bin/bash")
-(setq term-unbind-key-list '("C-x"))
+(setq multi-term-program "/bin/tcsh")
+(setq term-unbind-key-list '("C-x" "M-x" "C-c"))
 
 (setq term-bind-key-alist
-      '(("C-c" . term-interrupt-subjob)
+      '(("C-c C-c" . term-interrupt-subjob)
+        ("C-c C-e" . term-send-esc)
         ("C-p" . term-send-up)
         ("C-n" . term-send-down)
         ("C-s" . isearch-forward)
@@ -86,7 +87,8 @@
         ("M-p" . previous-line)
         ("M-n" . next-line)
         ("M-y" . yank-pop)
-        ("M-." . term-send-raw-meta)))
+        ("M-." . term-send-raw-meta)
+        ))
 
 ;; }}
 

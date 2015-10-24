@@ -83,4 +83,12 @@
          ad-do-it))
      ))
 
+;; The following is optional.
+(define-key yas-minor-mode-map (kbd "M-j") 'yas-expand)
+;; Strangely, just redefining one of the variations below won't work.
+;; All rebinds seem to be needed.
+(define-key yas-minor-mode-map [(tab)] nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+
 (provide 'init-yasnippet)

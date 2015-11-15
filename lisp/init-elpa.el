@@ -193,6 +193,7 @@ locate PACKAGE."
     hemisu-theme
     heroku-theme
     color-theme-sanityinc-solarized
+    quickrun
     )
   "Don't install any Melpa packages except these packages")
 
@@ -318,6 +319,7 @@ locate PACKAGE."
 (require-package 'anaconda-mode)
 (require-package 'company-anaconda)
 (require-package 'color-theme-sanityinc-solarized)
+(require-package 'quickrun)
 
 ;; (require-package 'command-frequency)
 

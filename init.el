@@ -162,6 +162,9 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(git-gutter:handled-backends (quote (svn hg git)))
+ '(org-agenda-files
+   (quote
+    ("~/org-notes/agenda/life.org" "~/org-notes/agenda/work.org")))
  '(regex-tool-backend (quote perl))
  '(safe-local-variable-values (quote ((lentic-init . lentic-orgel-org-init))))
  '(session-use-package t nil (session)))

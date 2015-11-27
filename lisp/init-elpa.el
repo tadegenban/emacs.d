@@ -193,7 +193,6 @@ locate PACKAGE."
     hemisu-theme
     heroku-theme
     color-theme-sanityinc-solarized
-    quickrun
     )
   "Don't install any Melpa packages except these packages")
 

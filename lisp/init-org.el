@@ -74,7 +74,7 @@
       ;; org v8
       org-odt-preferred-output-format "doc"
       org-tags-column 80
-      ;; org-startup-indented t
+      org-startup-indented t
       ;; {{ org 8.2.6 has some performance issue. Here is the workaround.
       ;; @see http://punchagan.muse-amuse.in/posts/how-i-learnt-to-use-emacs-profiler.html
       org-agenda-inhibit-startup t ;; ~50x speedup

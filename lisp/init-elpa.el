@@ -318,7 +318,6 @@ locate PACKAGE."
 (require-package 'anaconda-mode)
 (require-package 'company-anaconda)
 (require-package 'color-theme-sanityinc-solarized)
-(require-package 'quickrun)
 
 ;; (require-package 'command-frequency)
 

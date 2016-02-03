@@ -137,3 +137,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 (add-hook 'ediff-mode-hook 'ora-ediff-hook)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; find name
+(define-key dired-mode-map "F" 'find-name-dired)

@@ -109,3 +109,31 @@ point reaches the beginning or end of the buffer, stop there."
 (custom-set-variables `(regex-tool-backend 'perl))
 
 
+;; dired-get-size from abo-abo
+(defun dired-get-size ()
+  (interactive)
+  (let ((files (dired-get-marked-files)))
+    (with-temp-buffer
+      (apply 'call-process "/usr/bin/du" nil t nil "-sch" files)
+      (message
+       "Size of all marked files: %s"
+       (progn
+         (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*total$")
+         (match-string 1))))))
+
+(define-key dired-mode-map (kbd "z") 'dired-get-size)
+
+;; dired from abo-abo
+(setq dired-listing-switches "-lah1v --group-directories-first")
+
+(setq dired-recursive-copies 'always)
+;(setq dired-recursive-deletes 'always)  ; careful
+
+;; ediff
+(defun ora-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map "j" 'ediff-next-difference)
+  (define-key ediff-mode-map "k" 'ediff-previous-difference))
+
+(add-hook 'ediff-mode-hook 'ora-ediff-hook)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)

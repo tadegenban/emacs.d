@@ -140,3 +140,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; find name
 (define-key dired-mode-map "F" 'find-name-dired)
+
+;; modeline
+(powerline-default-theme)

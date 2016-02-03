@@ -140,6 +140,7 @@ locate PACKAGE."
     anaconda-mode
     undo-tree
     highlight-escape-sequences
+    powerline
     ;; make all the color theme packages available
     afternoon-theme
     define-word
@@ -190,10 +191,10 @@ locate PACKAGE."
     gruvbox-theme
     hc-zenburn-theme
     helm-themes
-    hemisu-theme
-    heroku-theme
-    color-theme-sanityinc-solarized
-    )
+    hemisu-theme)
+  heroku-theme
+  color-theme-sanityinc-solarized
+
   "Don't install any Melpa packages except these packages")
 
 ;; Don't take Melpa versions of certain packages
@@ -318,6 +319,7 @@ locate PACKAGE."
 (require-package 'anaconda-mode)
 (require-package 'company-anaconda)
 (require-package 'color-theme-sanityinc-solarized)
+(require-package 'powerline)
 
 ;; (require-package 'command-frequency)
 

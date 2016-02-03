@@ -191,9 +191,9 @@ locate PACKAGE."
     gruvbox-theme
     hc-zenburn-theme
     helm-themes
-    hemisu-theme)
-  heroku-theme
-  color-theme-sanityinc-solarized
+    hemisu-theme
+    heroku-theme
+    color-theme-sanityinc-solarized)
 
   "Don't install any Melpa packages except these packages")
 

@@ -144,3 +144,5 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; modeline
 (powerline-default-theme)
+
+(avy-setup-default)

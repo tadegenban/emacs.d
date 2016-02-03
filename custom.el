@@ -128,6 +128,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 (setq dired-recursive-copies 'always)
 ;(setq dired-recursive-deletes 'always)  ; careful
+(global-set-key (kbd "C-x C-j") 'dired-jump)
 
 ;; ediff
 (defun ora-ediff-hook ()

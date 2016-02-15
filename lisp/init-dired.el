@@ -38,7 +38,32 @@ if no files marked, always operate on current line in dired-mode
      (define-key dired-mode-map (kbd "SPC") 'avy-goto-word-or-subword-1)
 
      (require 'dired+)
+     ;; dired from abo-abo
+     (setq dired-listing-switches "-lah1v --group-directories-first")
+
+     (setq dired-recursive-copies 'always)
      (setq dired-recursive-deletes 'always)
+     (global-set-key (kbd "C-x C-j") 'dired-jump)
+
+     ;; find name
+     (define-key dired-mode-map "F" 'find-name-dired)
+
+     ;; dired-get-size from abo-abo
+     (defun dired-get-size ()
+       (interactive)
+       (let ((files (dired-get-marked-files)))
+         (with-temp-buffer
+           (apply 'call-process "/usr/bin/du" nil t nil "-sch" files)
+           (message
+            "Size of all marked files: %s"
+            (progn
+              (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*total$")
+              (match-string 1))))))
+
+     (define-key dired-mode-map (kbd "z") 'dired-get-size)
+
+
+
      (define-key dired-mode-map [mouse-2] 'dired-find-file)
      (dolist (file `(((if *unix* "zathura" "open") "pdf" "dvi" "pdf.gz" "ps" "eps")
                      ("unrar x" "rar")

@@ -157,3 +157,6 @@ point reaches the beginning or end of the buffer, stop there."
     (other-window 1)))
 
 (define-key dired-mode-map "Y" 'ora-dired-rsync)
+
+;;
+(setq avy-timeout-seconds 1)

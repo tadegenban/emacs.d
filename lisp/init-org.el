@@ -127,6 +127,7 @@
       (require 'org-clock)
       ; @see http://irreal.org/blog/?p=671
       (setq org-src-fontify-natively t)
+      (org-defkey org-mode-map [(control ?\')] nil)
       ;; (require 'org-fstree)
       (defun soft-wrap-lines ()
         "Make lines wrap at window edge and on word boundary,

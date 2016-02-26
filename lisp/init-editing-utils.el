@@ -166,7 +166,7 @@
 
 (when (maybe-require-package 'avy)
   (autoload 'avy-goto-word-or-subword-1 "avy")
-  (global-set-key (kbd "C-'") 'avy-goto-word-or-subword-1)
+  (global-set-key (kbd "C-'") 'avy-goto-char-timer)
   (global-set-key (kbd "C-:") 'avy-goto-char)
   (global-set-key (kbd "C-;") 'avy-goto-char-2)
   (global-set-key (kbd "C-l") 'avy-goto-line)

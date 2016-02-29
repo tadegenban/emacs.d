@@ -24,7 +24,7 @@ if no files marked, always operate on current line in dired-mode
 
 ;; @see http://blog.twonegatives.com/post/19292622546/dired-dwim-target-is-j00-j00-magic
 ;; op open two new dired buffers side-by-side and give your new-found automagic power a whirl.
-;; Now combine that with a nice window configuration stored in a register and you’ve got a pretty slick work flow.
+;; Now combine that with a nice window configuration stored in a register and you’vie got a pretty slick work flow.
 (setq dired-dwim-target t)
 
 (eval-after-load 'dired
@@ -35,6 +35,7 @@ if no files marked, always operate on current line in dired-mode
 
      (define-key dired-mode-map "/" 'dired-isearch-filenames)
      (define-key dired-mode-map "\\" 'diredext-exec-git-command-in-shell)
+     (define-key dired-mode-map "r" 'dired-do-async-shell-command)
      (define-key dired-mode-map (kbd "SPC") 'avy-goto-word-or-subword-1)
 
      (require 'dired+)
@@ -43,7 +44,6 @@ if no files marked, always operate on current line in dired-mode
 
      (setq dired-recursive-copies 'always)
      (setq dired-recursive-deletes 'always)
-     (global-set-key (kbd "C-x C-j") 'dired-jump)
 
      ;; find name
      (define-key dired-mode-map "F" 'find-name-dired)

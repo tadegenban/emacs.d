@@ -89,6 +89,7 @@
         ("M-n" . next-line)
         ("M-y" . yank-pop)
         ("M-." . term-send-raw-meta)
+        ("C-;" . dired-jump)
         ))
 
 ;; }}

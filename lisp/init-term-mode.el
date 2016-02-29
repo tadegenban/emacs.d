@@ -55,7 +55,10 @@
 	  (switch-to-buffer b))))
 
 (define-key global-map (kbd "C-x e") 'multi-term)
-(define-key dired-mode-map (kbd "`") 'multi-term)
+(eval-after-load 'dired
+  '(define-key dired-mode-map (kbd "`") 'multi-term)
+  )
+
 
 (defun term-send-kill-whole-line ()
   "Kill whole line in term mode."

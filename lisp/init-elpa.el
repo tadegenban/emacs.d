@@ -221,6 +221,8 @@ locate PACKAGE."
 (require-package 'color-theme)
 (require-package 'auto-compile)
 (require-package 'avy)
+(require-package 'swiper)
+(require-package 'counsel)
 (require-package 'expand-region) ;; I prefer stable version
 (require-package 'fringe-helper)
 (require-package 'haskell-mode)

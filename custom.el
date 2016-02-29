@@ -48,7 +48,9 @@
         )
      )
 )
-
+(eval-after-load 'dired
+  '(define-key dired-mode-map "Y" 'ora-dired-rsync)
+  )
 
 ;;quick-jump mode
 ;; (require 'quick-jump)
@@ -157,7 +159,7 @@ point reaches the beginning or end of the buffer, stop there."
     ;; finally, switch to that window
     (other-window 1)))
 
-(define-key dired-mode-map "Y" 'ora-dired-rsync)
+
 
 ;;
 (setq avy-timeout-seconds 1)

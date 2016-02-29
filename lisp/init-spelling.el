@@ -150,5 +150,6 @@
 ;; you can also use "M-x ispell-word" or hotkey "M-$". It pop up a multiple choice
 ;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
 (global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
+(define-key flyspell-mode-map (kbd "C-;") nil)
 
 (provide 'init-spelling)

@@ -55,6 +55,7 @@
 	  (switch-to-buffer b))))
 
 (define-key global-map (kbd "C-x e") 'multi-term)
+(define-key dired-mode-map (kbd "`") 'multi-term)
 
 (defun term-send-kill-whole-line ()
   "Kill whole line in term mode."
@@ -79,7 +80,7 @@
         ("C-r" . term-send-reverse-search-history)
         ("C-m" . term-send-raw)
         ("C-k" . term-send-kill-whole-line)
-        ("C-y" . yank)
+        ("C-y" . term-paste)
         ("C-_" . term-send-raw)
         ("M-f" . term-send-forward-word)
         ("M-b" . term-send-backward-word)

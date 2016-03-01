@@ -38,6 +38,10 @@
      (require 'flyspell-lazy)
      (flyspell-lazy-mode 1)))
 
+(eval-after-load 'flyspell
+  '(define-key flyspell-mode-map (kbd "C-;") nil)
+  )
+
 ;; better performance
 (setq flyspell-issue-message-flag nil)
 
@@ -150,6 +154,6 @@
 ;; you can also use "M-x ispell-word" or hotkey "M-$". It pop up a multiple choice
 ;; @see http://frequal.com/Perspectives/EmacsTip03-FlyspellAutoCorrectWord.html
 (global-set-key (kbd "C-c s") 'flyspell-auto-correct-word)
-(define-key flyspell-mode-map (kbd "C-;") nil)
+
 
 (provide 'init-spelling)

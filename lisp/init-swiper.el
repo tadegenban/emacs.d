@@ -1,4 +1,3 @@
-(require 'ivy)
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-height 10)
@@ -14,3 +13,5 @@
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
 (define-key ivy-minibuffer-map (kbd "C-w") 'ivy-yank-word)
+
+(provide 'init-swiper)

@@ -170,4 +170,3 @@ point reaches the beginning or end of the buffer, stop there."
     (with-current-buffer "*Async Shell Command*"
       (rename-buffer (concat ">> " command) 1 ))))
 (ad-activate 'shell-command)
-(ad-deactivate 'shell-command)

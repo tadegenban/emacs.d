@@ -168,5 +168,5 @@ point reaches the beginning or end of the buffer, stop there."
 (defadvice shell-command (after shell-in-new-buffer (command &optional output-buffer error-buffer))
   (when (get-buffer "*Async Shell Command*")
     (with-current-buffer "*Async Shell Command*"
-      (rename-buffer (concat "*ASC*" command)))))
+      (rename-buffer (concat ">> " command)))))
 (ad-activate 'shell-command)

@@ -163,3 +163,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;;
 (setq avy-timeout-seconds 1)
+
+;; rename *Async Shell Command* with command line
+(defadvice shell-command (after shell-in-new-buffer (command &optional output-buffer error-buffer))
+  (when (get-buffer "*Async Shell Command*")
+    (with-current-buffer "*Async Shell Command*"
+      (rename-buffer (concat "*ASC*" command)))))
+(ad-activate 'shell-command)

@@ -61,8 +61,7 @@
 
 ;;auto split windows
 (add-hook 'window-setup-hook (lambda () (split-window-horizontally)
-                               (select-window-2)
-                               (split-window-vertically) )
+                                )
           )
 
 ;;

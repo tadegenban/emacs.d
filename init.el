@@ -162,7 +162,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#839496" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#002b36"))
- '(bmkp-last-as-first-bookmark-file "/remote/cn42home1/yanchen/.emacs.d/.bookmarks.el")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks.el")
  '(custom-enabled-themes (quote (sanityinc-solarized-dark)))
  '(custom-safe-themes
    (quote

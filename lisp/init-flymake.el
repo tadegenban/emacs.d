@@ -21,4 +21,12 @@ Return nil if we cannot, non-nil if we can."
        (if (and file-name (flymake-get-init-function file-name)) t nil))
      ))
 
+(eval-after-load "flymake"
+  '(progn
+    (defun flymake-after-change-function (start stop len)
+      "Start syntax check for current buffer if it isn't already running."
+      ;; Do nothing, don't want to run checks until I save.
+      )))
+
+
 (provide 'init-flymake)

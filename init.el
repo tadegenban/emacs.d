@@ -113,7 +113,6 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 ;; need statistics of keyfreq asap
 (require 'init-keyfreq)
 (require 'init-httpd)
-(require 'init-swiper)
 
 ;; projectile costs 7% startup time
 
@@ -121,6 +120,8 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-misc)
 (require 'init-color-theme)
 (require 'init-emacs-w3m)
+
+(require 'init-swiper)
 
 ;; {{ idle require other stuff
 (setq idle-require-idle-delay 3)

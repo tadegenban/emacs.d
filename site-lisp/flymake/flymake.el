@@ -2054,7 +2054,7 @@ steps to set this manually."
     ;; The antics with PATH=... is to try to make sure we don't trash
     ;; $PATH in the event that the command errors for some reason - don't
     ;; want our path set to the error message.
-    (let ((raw-modified-path (shell-command-to-string (concat "bash -c '. " (getenv "PERLBREW_ROOT") "/etc/bashrc;echo \"PATH=$PATH\"'"))))
+    (let ((raw-modified-path (shell-command-to-string (concat "bash -c '. " (getenv "PERLBREW_ROOT") "/etc/bashrc1;echo \"PATH=$PATH\"'"))))
       (string-match "PATH=\\(.+\\)$" raw-modified-path)
       (let ((modified-path (match-string 1 raw-modified-path)))
         (if modified-path

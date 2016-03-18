@@ -98,13 +98,13 @@ point reaches the beginning or end of the buffer, stop there."
                 'smarter-move-beginning-of-line)
 
 ;; smex
-(defun my-smex ()
-   (interactive)
-   (flx-ido-mode -1) ;; turn off flx-ido temporarily
-   (smex)
-   (flx-ido-mode 1) ;; turn on flx-ido
-   )
-(global-set-key (kbd "M-x") 'my-smex)
+;; (defun my-smex ()
+;;    (interactive)
+;;    (flx-ido-mode -1) ;; turn off flx-ido temporarily
+;;    (smex)
+;;    (flx-ido-mode 1) ;; turn on flx-ido
+;;    )
+;; (global-set-key (kbd "M-x") 'my-smex)
 
 
 ;; regex-tool

@@ -45,6 +45,8 @@
 	(if (eq 'term-mode (with-current-buffer (car l) major-mode))
 	    (car l) (last-term-buffer (cdr l)))))
 
+(setq multi-term-switch-after-close nil)
+
 (defun get-term ()
   "Switch to the term buffer last used, or create a new one if
     none exists, or if the current buffer is already a term."

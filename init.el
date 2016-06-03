@@ -172,7 +172,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
  '(git-gutter:handled-backends (quote (svn hg git)))
  '(org-agenda-files
    (quote
-    ("~/org-notes/agenda/work.org" "~/org-notes/agenda/archive.org" "~/org-notes/agenda/someday.org" "~/org-notes/agenda/life.org")))
+    ("~/org-notes/agenda/work.org" "~/org-notes/agenda/performance-regression.org" "~/org-notes/agenda/archive.org" "~/org-notes/agenda/someday.org" "~/org-notes/agenda/life.org")))
  '(regex-tool-backend (quote perl))
  '(safe-local-variable-values (quote ((lentic-init . lentic-orgel-org-init))))
  '(session-use-package t nil (session))

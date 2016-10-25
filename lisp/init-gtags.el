@@ -1,6 +1,6 @@
 (defun gtags-ext-produce-tags-if-needed (dir)
    (if (not (= 0 (call-process "global" nil nil nil " -p"))) ; tagfile doesn't exist?
-      (let ((default-directory dir))
+       (let ((default-directory dir))
         (shell-command "gtags && echo 'created tagfile'"))
     ;;  tagfile already exists; update it
     (shell-command "global -u && echo 'updated tagfile'"))

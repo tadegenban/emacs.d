@@ -96,7 +96,8 @@
               )))
 
 (setq org-todo-keyword-faces
-      '(("CHECK" . "green")))
+      '(("CHECK" . "green")
+        ("BETTER" . "cyan")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org clock

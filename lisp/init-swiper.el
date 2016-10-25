@@ -5,6 +5,7 @@
 (setq ivy-count-format "(%d/%d) ")
 
 (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 (global-set-key (kbd "C-s") 'counsel-grep-or-swiper)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -26,5 +27,23 @@
          (horz
           (file "ivy.el")
           (buffer "*scratch*")))))
+
+
+
+(defun ivy-copy-to-buffer-action (x)
+  (let ((str (read-string ":")))
+    (with-ivy-window
+      (insert str))))
+
+(defun ivy-call-last-kbd-macro (x)
+  (with-ivy-window
+    (call-last-kbd-macro))
+  )
+
+(ivy-set-actions
+ 'counsel-grep-or-swiper
+ '(
+   ("q" ivy-call-last-kbd-macro "call-last-kbd-macro")))
+
 
 (provide 'init-swiper)

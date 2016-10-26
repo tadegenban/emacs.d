@@ -136,8 +136,8 @@
 ;; Expand region
 ;;----------------------------------------------------------------------------
 (require-package 'expand-region)
-(global-set-key (kbd "C-\\") 'er/expand-region)
-
+(global-set-key (kbd "M-]") 'er/expand-region)
+(global-set-key (kbd "M-[") 'er/contract-region)
 
 ;;----------------------------------------------------------------------------
 ;; Don't disable case-change functions

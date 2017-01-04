@@ -43,7 +43,8 @@
 (ivy-set-actions
  'counsel-grep-or-swiper
  '(
-   ("q" ivy-call-last-kbd-macro "call-last-kbd-macro")))
+   ("q" ivy-call-last-kbd-macro "call-last-kbd-macro")
+   ))
 
 
 (provide 'init-swiper)

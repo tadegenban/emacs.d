@@ -171,5 +171,66 @@ point reaches the beginning or end of the buffer, stop there."
 (ad-activate 'shell-command)
 
 
+(require 'p4)
+;; ;; perforce from chenbin
+;; ;; {{ perforce utilities
+;; (defvar p4-file-to-url '("" "")
+;;   "(car p4-file-to-url) is the original file prefix
+;; (cadr p4-file-to-url) is the url prefix")
+
+;; ;; (defun p4-generate-cmd (opts)
+;; ;;   (format "p4 %s %s"
+;; ;;           opts
+;; ;;           (replace-regexp-in-string (car p4-file-to-url)
+;; ;;                                     (cadr p4-file-to-url)
+;; ;;                                     buffer-file-name)))
+
+;; (defun p4-generate-cmd (opts)
+;;   (format "p4 %s %s"
+;;           opts
+;;           buffer-file-name))
+
+;; (defun p4fl ()
+;;   "p4 edit current file."
+;;   (interactive)
+;;   (shell-command (p4-generate-cmd "filelog"))
+;;   )
+
+
+;; (defun p4edit ()
+;;   "p4 edit current file."
+;;   (interactive)
+;;   (shell-command (p4-generate-cmd "edit"))
+;;   (read-only-mode -1))
+
+;; (defun p4submit (&optional file-opened)
+;;   "p4 submit current file.
+;; If FILE-OPENED, current file is still opened."
+;;   (interactive "P")
+;;   (let* ((msg (read-string "Say (ENTER to abort):"))
+;;          (open-opts (if file-opened "-f leaveunchanged+reopen -r" ""))
+;;          (full-opts (format "submit -d '%s' %s" msg open-opts)))
+;;     ;; (message "(p4-generate-cmd full-opts)=%s" (p4-generate-cmd full-opts))
+;;     (if (string= "" msg)
+;;         (message "Abort submit.")
+;;       (shell-command (p4-generate-cmd full-opts))
+;;       (unless file-opened (read-only-mode 1))
+;;       (message (format "%s submitted."
+;;                        (file-name-nondirectory buffer-file-name))))))
+
+;; (defun p4revert ()
+;;   "p4 revert current file."
+;;   (interactive)
+;;   (shell-command (p4-generate-cmd "revert"))
+;;   (read-only-mode 1))
+;; ;; }}
+
+;; ;; (defun prog-mode-hook-setup ()
+;; ;;   (when (string-match-p "DIR/PROJ1/"
+;; ;;                         (if buffer-file-name buffer-file-name ""))
+;; ;;     (setq-local p4-file-to-url '("^.*DIR/PROJ1"
+;; ;;                                  "//depot/development/DIR/PROJ1"))))
+;; ;; (add-hook 'prog-mode-hook prog-mode-hook-setup)
+
 ;; find-dired output format
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh"))

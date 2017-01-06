@@ -5,6 +5,7 @@
 (global-set-key (kbd "<home>") 'beginning-of-buffer)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-;") 'dired-jump)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 
 ;;

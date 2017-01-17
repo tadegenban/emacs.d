@@ -234,3 +234,6 @@ point reaches the beginning or end of the buffer, stop there."
 ;; ;; (add-hook 'prog-mode-hook prog-mode-hook-setup)
 
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh"))
+
+;; spice-mode from https://github.com/snmishra/emacs-netlist-modes/blob/master/spice-mode/spice-mode.el
+(require 'spice-mode)

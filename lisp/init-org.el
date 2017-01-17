@@ -91,13 +91,16 @@
 
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d!/!)")
-              (sequence "WAITING(w@/!)" "SOMEDAY(S)" "PROJECT(P@)" "|" "CANCELLED(c@/!)")
+      (quote ((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "SOMEDAY(S)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
+              (sequence "CHECK(c)" "ISSUE(i)" "BETTER(b)" "|" "PASS(p)" "FIX(f)" "ACCEPT(a)")
               )))
 
 (setq org-todo-keyword-faces
       '(("CHECK" . "green")
-        ("BETTER" . "cyan")))
+        ("BETTER" . "cyan")
+        ("WAITING" . "orange")
+        ("CANCELLED" . "dim gray")
+        ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org clock

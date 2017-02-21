@@ -235,3 +235,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; find-dired output format
 (setq find-ls-option '("-exec ls -ldh {} +" . "-ldh"))
+
+;; spice-mode from https://github.com/snmishra/emacs-netlist-modes/blob/master/spice-mode/spice-mode.el
+(require 'spice-mode)
+
+;; pod-mod from https://github.com/renormalist/emacs-pod-mode/blob/master/pod-mode.el
+(require 'pod-mode)
+

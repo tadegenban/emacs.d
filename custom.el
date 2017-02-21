@@ -237,3 +237,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; spice-mode from https://github.com/snmishra/emacs-netlist-modes/blob/master/spice-mode/spice-mode.el
 (require 'spice-mode)
+
+;; pod-mod from https://github.com/renormalist/emacs-pod-mode/blob/master/pod-mode.el
+(require 'pod-mode)
+

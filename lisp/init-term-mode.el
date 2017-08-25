@@ -97,7 +97,11 @@
         ("C-;" . dired-jump)
         ))
 
-
+;;Often I want to rename the terminal buffer so that it's not just *terminal<#>*.
+;;We can introduce a function to rename the buffer to be in the form *term* buffer-name.
+(defun rename-term (name)
+  (interactive "s")
+  (rename-buffer (concat "*term< " name " >")))
 
 ;; }}
 

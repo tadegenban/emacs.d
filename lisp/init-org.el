@@ -91,8 +91,8 @@
 
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "SOMEDAY(S)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              (sequence "CHECK(c)" "ISSUE(i)" "BETTER(b)" "|" "PASS(p)" "FIX(f)" "ACCEPT(a)")
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+              (sequence "WAITING(w@/!)" "SOMEDAY(S)" "|" "CANCELLED(c@/!)")
               )))
 
 (setq org-todo-keyword-faces
@@ -173,5 +173,42 @@
       '(elisp "lisp"
               emacs-lisp "lisp"))
 ;; }}
+
+;; org capture
+(global-set-key (kbd "C-c c") 'org-capture)
+;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
+(setq org-capture-templates
+      (quote (("t" "todo" entry (file "~/org-notes/agenda/refile.org")
+               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("r" "respond" entry (file "~/org-notes/agenda/refile.org")
+               "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+              ("n" "note" entry (file "~/org-notes/agenda/refile.org")
+               "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+              ("j" "Journal" entry (file+datetree "~/org-notes/agenda/diary.org")
+               "* %?\n%U\n" :clock-in t :clock-resume t)
+              ("w" "org-protocol" entry (file "~/org-notes/agenda/refile.org")
+               "* TODO Review %c\n%U\n" :immediate-finish t)
+              ("m" "Meeting" entry (file "~/org-notes/agenda/refile.org")
+               "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
+              ("p" "Phone call" entry (file "~/org-notes/agenda/refile.org")
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
+              ("h" "Habit" entry (file "~/org-notes/agenda/refile.org")
+               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+
+
+;; org refile
+; Targets include this file and any file contributing to the agenda - up to 9 levels deep
+(setq org-refile-targets (quote ((nil :maxlevel . 1)
+                                 (org-agenda-files :maxlevel . 1))))
+
+; Use full outline paths for refile targets - we file directly with IDO
+(setq org-refile-use-outline-path t)
+
+; Targets complete directly with IDO
+(setq org-outline-path-complete-in-steps nil)
+
+; Allow refile to create parent tasks with confirmation
+(setq org-refile-allow-creating-parent-nodes (quote confirm))
+
 
 (provide 'init-org)

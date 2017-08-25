@@ -28,7 +28,7 @@
 ;;                       charset
 ;;                       (font-spec :family "Microsoft Yahei"
 ;; 				 :size 12)))
-;;ָ�����ڴ��ļ�
+;;Ö¸¶¨´°¿Ú´ò¿ªÎÄ¼þ
 (global-set-key (kbd "<f8>")
     (lambda () (interactive)
                (progn (message "Current windows is assigned.")
@@ -241,4 +241,16 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; pod-mod from https://github.com/renormalist/emacs-pod-mode/blob/master/pod-mode.el
 (require 'pod-mode)
+(add-to-list 'auto-mode-alist '("\\.pod$" . pod-mode))
+
+;; all-the-icons in dired-mode
+;; feels not good 
+;;(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+;; all-the-icons in ivy
+(all-the-icons-ivy-setup)
+
+;; use ripgrep for counsel-grep
+(setq counsel-grep-base-command
+ "rg -i -M 120 --no-heading --line-number --color never '%s' %s")
 

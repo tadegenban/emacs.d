@@ -193,7 +193,11 @@ locate PACKAGE."
     helm-themes
     hemisu-theme
     heroku-theme
-    color-theme-sanityinc-solarized)
+    color-theme-sanityinc-solarized
+    font-lock+
+    memoize
+    all-the-icons-dired
+    )
 
   "Don't install any Melpa packages except these packages")
 
@@ -214,7 +218,6 @@ locate PACKAGE."
 ;;------------------------------------------------------------------------------
 
 (package-initialize)
-
 (require-package 'kv)
 (require-package 'dash)
 ; color-theme 6.6.1 in elpa is buggy
@@ -323,6 +326,11 @@ locate PACKAGE."
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'powerline)
 
+(require-package 'font-lock+)
+(require-package 'memoize)
+(require-package 'all-the-icons)
+(require-package 'all-the-icons-dired)
+(require-package 'all-the-icons-ivy)
 ;; (require-package 'command-frequency)
 
 (provide 'init-elpa)

@@ -247,7 +247,7 @@ point reaches the beginning or end of the buffer, stop there."
 ;;(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 ;; all-the-icons in ivy
-(all-the-icons-ivy-setup)
+;;(all-the-icons-ivy-setup)
 
 ;; use ripgrep for counsel-grep
 (setq counsel-grep-base-command

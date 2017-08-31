@@ -326,11 +326,12 @@ locate PACKAGE."
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'powerline)
 
-(require-package 'font-lock+)
 (require-package 'memoize)
-(require-package 'all-the-icons)
-(require-package 'all-the-icons-dired)
-(require-package 'all-the-icons-ivy)
+;;; not use all-the-icons
+;;(require-package 'font-lock+)
+;;(require-package 'all-the-icons)
+;;(require-package 'all-the-icons-dired)
+;;(require-package 'all-the-icons-ivy)
 ;; (require-package 'command-frequency)
 
 (provide 'init-elpa)

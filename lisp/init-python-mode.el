@@ -9,8 +9,8 @@
 (add-hook 'python-mode-hook
           '(lambda ()
              (unless (is-buffer-file-temp)
-               (anaconda-mode)
-               (add-to-list 'company-backends 'company-anaconda)
+               ;; (anaconda-mode)
+               ;;(add-to-list 'company-backends 'company-anaconda)
                (eldoc-mode)
                (if (executable-find "pyflakes")
                    (flymake-python-pyflakes-load))

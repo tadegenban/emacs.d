@@ -16,17 +16,17 @@ when toggle off input method, switch to evil-normal-state if current state is ev
       (progn
         (deactivate-input-method)
         (setq current-input-method nil))
-    (unless (bound-and-true-p chinese-pyim)
-      (require 'chinese-pyim))
+    (unless (bound-and-true-p pyim)
+      (require 'pyim))
     (activate-input-method default-input-method)
     (setq current-input-method default-input-method)))
 
 (global-set-key (kbd "C-\\") 'evil-toggle-input-method)
 ;; }}
 
-(eval-after-load 'chinese-pyim
+(eval-after-load 'pyim
   '(progn
-     (setq default-input-method "chinese-pyim")
+     (setq default-input-method "pyim")
      (setq pyim-use-tooltip nil)              ; don't use tooltip
      (setq pyim-dicts '((:name "pinyin1" :file "~/.eim/py.txt" :coding utf-8-unix)))
 
@@ -56,4 +56,5 @@ when toggle off input method, switch to evil-normal-state if current state is ev
 
      ))
 
+(setq debug-on-error t)
 (provide 'init-chinese-pyim)

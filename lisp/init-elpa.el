@@ -197,6 +197,8 @@ locate PACKAGE."
     font-lock+
     memoize
     all-the-icons-dired
+    pyim
+    pyim-basedict
     )
 
   "Don't install any Melpa packages except these packages")
@@ -325,6 +327,7 @@ locate PACKAGE."
 (require-package 'company-anaconda)
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'powerline)
+(require-package 'pyim)
 
 (require-package 'memoize)
 ;;; not use all-the-icons

@@ -251,6 +251,4 @@ point reaches the beginning or end of the buffer, stop there."
 ;;(all-the-icons-ivy-setup)
 
 ;; use ripgrep for counsel-grep
-(setq counsel-grep-base-command
- "rg -i -M 120 --no-heading --line-number --color never '%s' %s")
 

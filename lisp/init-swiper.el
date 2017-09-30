@@ -11,7 +11,7 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+oun(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
 (global-set-key (kbd "<f1> l") 'counsel-load-library)
 (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
@@ -51,5 +51,19 @@
       '((emacs-lisp-mode . swiper-match-face-1)
         (dired-mode . ivy-subdir)
         (org-mode . org-level-4)))
+
+
+(defun counsel-goto-recent-directory ()
+  "Open recent directory with dired"
+  (interactive)
+  (unless recentf-mode (recentf-mode 1))
+  (let ((collection
+         (delete-dups
+          (append (mapcar 'file-name-directory recentf-list)
+                  ;; fasd history
+                  (if (executable-find "fasd")
+                      (split-string (shell-command-to-string "fasd -ld") "\n" t))))))
+    (ivy-read "directories:" collection :action 'dired)))
+
 
 (provide 'init-swiper)

@@ -1,4 +1,6 @@
 ;; {{ make IME compatible with evil-mode
+(require 'pyim-basedict) ; 拼音词库设置，五笔用户 *不需要* 此行设置
+(pyim-basedict-enable)   ; 拼音词库，五笔用户 *不需要* 此行设置
 (defun evil-toggle-input-method ()
   "when toggle on input method, switch to evil-insert-state if possible.
 when toggle off input method, switch to evil-normal-state if current state is evil-insert-state"

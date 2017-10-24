@@ -118,7 +118,7 @@ point reaches the beginning or end of the buffer, stop there."
 (defun ora-ediff-hook ()
   (ediff-setup-keymap)
   (define-key ediff-mode-map "j" 'ediff-next-difference)
-  (define-key ediff-mode-map "k" 'ediff-previous-difference))
+  (define-key ediff-mode-map "k" 'ediff-previous--difference))
 
 (add-hook 'ediff-mode-hook 'ora-ediff-hook)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
@@ -127,7 +127,11 @@ point reaches the beginning or end of the buffer, stop there."
 ;; modeline
 (powerline-default-theme)
 
+;; avy
 (avy-setup-default)
+(setq avy-timeout-seconds 1)
+(global-set-key (kbd "M-t") 'avy-pop-mark)
+
 
 ;;; abo-abo: Using rsync in dired
 (defun ora-dired-rsync (dest)
@@ -161,8 +165,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 
-;;
-(setq avy-timeout-seconds 1)
 
 ;; rename *Async Shell Command* with command line
 (defadvice shell-command (after shell-in-new-buffer (command &optional output-buffer error-buffer))

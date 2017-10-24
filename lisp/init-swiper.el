@@ -29,6 +29,8 @@
           (file "ivy.el")
           (buffer "*scratch*")))))
 
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-pop-view)
 
 
 (defun ivy-copy-to-buffer-action (x)

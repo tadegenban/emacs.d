@@ -199,6 +199,7 @@ locate PACKAGE."
     all-the-icons-dired
     pyim
     pyim-basedict
+    vlf
     )
 
   "Don't install any Melpa packages except these packages")
@@ -328,6 +329,7 @@ locate PACKAGE."
 (require-package 'color-theme-sanityinc-solarized)
 (require-package 'powerline)
 (require-package 'pyim)
+(require-package 'vlf)
 
 (require-package 'memoize)
 ;;; not use all-the-icons

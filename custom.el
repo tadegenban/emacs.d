@@ -114,37 +114,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 
 
-;; ediff
-(defun ora-ediff-hook ()
-  (ediff-setup-keymap)
-  (define-key ediff-mode-map "j" 'ediff-next-difference)
-  (define-key ediff-mode-map "k" 'ediff-previous--difference))
-
-(add-hook 'ediff-mode-hook 'ora-ediff-hook)
-(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
-
-(define-key dired-mode-map "e" 'ora-ediff-files)
-(defun ora-ediff-files ()
-  (interactive)
-  (let ((files (dired-get-marked-files))
-        (wnd (current-window-configuration)))
-    (if (<= (length files) 2)
-        (let ((file1 (car files))
-              (file2 (if (cdr files)
-                         (cadr files)
-                       (read-file-name
-                        "file: "
-                        (dired-dwim-target-directory)))))
-          (if (file-newer-than-file-p file1 file2)
-              (ediff-files file2 file1)
-            (ediff-files file1 file2))
-          (add-hook 'ediff-after-quit-hook-internal
-                    (lambda ()
-                      (setq ediff-after-quit-hook-internal nil)
-                      (set-window-configuration wnd))))
-      (error "no more than 2 files should be marked"))))
-
-
 ;; modeline
 (powerline-default-theme)
 
@@ -275,3 +244,13 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; use ripgrep for counsel-grep
 
+
+;; According to the web-mode documentation, you can do that with the following:
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+;; You can also set values for web-mode-css-indent-offset for CSS, and web-mode-code-indent-offset Javascript, Java, PHP, etc.

@@ -76,6 +76,36 @@ if no files marked, always operate on current line in dired-mode
        (add-to-list 'dired-guess-shell-alist-default
                     (list (concat "\\." (regexp-opt (cdr file) t) "$")
                           (car file))))
+
+     ;; ediff
+     (defun ora-ediff-hook ()
+       (ediff-setup-keymap)
+       (define-key ediff-mode-map "j" 'ediff-next-difference)
+       (define-key ediff-mode-map "k" 'ediff-previous--difference))
+
+     (add-hook 'ediff-mode-hook 'ora-ediff-hook)
+     (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+     (define-key dired-mode-map "e" 'ora-ediff-files)
+     (defun ora-ediff-files ()
+       (interactive)
+       (let ((files (dired-get-marked-files))
+             (wnd (current-window-configuration)))
+         (if (<= (length files) 2)
+             (let ((file1 (car files))
+              (file2 (if (cdr files)
+                         (cadr files)
+                       (read-file-name
+                        "file: "
+                        (dired-dwim-target-directory)))))
+               (if (file-newer-than-file-p file1 file2)
+                   (ediff-files file2 file1)
+                 (ediff-files file1 file2))
+               (add-hook 'ediff-after-quit-hook-internal
+                         (lambda ()
+                      (setq ediff-after-quit-hook-internal nil)
+                      (set-window-configuration wnd))))
+           (error "no more than 2 files should be marked"))))
      ))
 
 (provide 'init-dired)
